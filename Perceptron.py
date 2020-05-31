@@ -3,9 +3,10 @@ import random as rd
 
 epocas = 50
 
-# importando os csv's
-# treino = np.loadtxt('Conjuntos MNIST/mnist_treinamento.csv', dtype = float, delimiter = ',')
-# teste = np.loadtxt('Conjuntos MNIST/mnist_teste.csv', dtype = float, delimiter = ',')
+# importando os datasets
+dir_path = "C:/Users/Jess/Documents/USP/2020.1/IA/Conjuntos MNIST/"
+treino = np.loadtxt(dir_path + '/mnist_treinamento.csv', dtype = float, delimiter = ',')
+teste = np.loadtxt(dir_path + '/mnist_teste.csv', dtype = float, delimiter = ',')
 
 # embaralhando os dados
 
@@ -22,7 +23,7 @@ print(random_weights())
 def net_input(amostras):
 	net = 0
 	pesos = random_weights()
-	for i in num_amostras:
+	for i in amostras[]:
 		for j in amostras:
 			net += pesos[j] * amostras[i][j]
 	return net
