@@ -16,26 +16,6 @@ class Perceptron:
 	treino = data[0]
 	teste = data[1]
 
-	# embaralhando os dados
-	def shuffle_dataset(data):
-		shuffle_dataset = data
-	    np.random.shuffle(shuffle_dataset)
-	    return shuffle_dataset
-
-	# print(teste)
-
-	# treino_embaralhado = teste  # make a copy
-	# np.random.shuffle(treino_embaralhado)
-	# print("treino embaralhado:")
-	# print(treino_embaralhado)
-
-	# print(treino)
-
-	# teste_embaralhado = teste  # make a copy
-	# np.random.shuffle(teste_embaralhado)
-	# print("teste embaralhado:")
-	# print(teste_embaralhado)
-
 	# gerando os pesos aleatorios para as 785 entradas
 	def random_weights():
 		weights = np.zeros(785)
@@ -43,29 +23,11 @@ class Perceptron:
 			weights[i] = rd.uniform(-0.5, 0.5)
 		return weights
 
-	# print(random_weights())
-
-	# soma ponderada das entradas
-	# def net_input(amostras, pesos):
-	# 	taxa_aprendizado = 0.01
-	# 	net = 0
-	# 	erro = 0
-	# 	pesos = random_weights()
-	# 	for linha in range(amostras.shape[0]):
-	# 		rotulo = amostras[linha, 0]
-	# 		for j in range(amostras.shape[1]-1):
-	# 			net += pesos[j+1] * amostras[linha][j+1]
-	# 		net_sum = pesos[0] * bias + net
-	# 		saida = check_result(rotulo, net_sum) # t_k
-	# 		if(net_sum > 0):
-	# 			y_k = 1
-	# 		else:
-	# 			y_k = 0
-	# 		if(saida != 1):
-	# 			pesos[0] = pesos[0] + taxa_aprendizado * (saida - y_k) * bias
-	# 			for j in range(amostras.shape[1]-1):
-	# 				pesos[j+1] = pesos[j+1] + taxa_aprendizado * (saida - y_k) * amostras[linha][j+1]
-	# 	return net
+	# embaralhando os dados
+	def shuffle_dataset(data):
+            shuffled_dataset = data
+            np.random.shuffle(shuffled_dataset)
+            return shuffled_dataset
 
 	# confere resultado
 	def check_result(resultado_esperado, label_amostra):
@@ -101,7 +63,6 @@ class Perceptron:
 					for j in range(amostras.shape[1]-1):
 						pesos[j+1] = pesos[j+1] + taxa_aprendizado * (saida - y_k) * amostras[linha][j+1]
 
-		
-			
+Perceptron.train_perceptron()
 	# serao treinados dez perceptrons um para cada digito
 
